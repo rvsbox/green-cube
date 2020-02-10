@@ -6,7 +6,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="../../index3.html" class="nav-link">Home</a>
+            <a href="/" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Contact</a>
@@ -30,7 +30,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="/" class="brand-link">
         <img src="dist/img/AdminLTELogo.png"
              alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3"
@@ -58,36 +58,53 @@
 
                 <!-- START - DASHBOARD -->
                 <li class="nav-item">
-                    <a href="../dashboard.html" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard
-                        </p>
-                    </a>
+                    {{#if isDashboard}}
+                        <a href="/" class="nav-link active">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    {{else}}
+                        <a href="/" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    {{/if}}
                 </li>
                 <!-- END - DASHBOARD -->
 
                 <!-- START - PAGES -->
                 <li class="nav-item has-treeview">
+
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
-                        <p>
-                            Pages
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
+                        <p>Pages<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../examples/page-1.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Page 1</p>
-                            </a>
+                            {{#if isPage1}}
+                                <a href="/page-1" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Page 1</p>
+                                </a>
+                            {{else}}
+                                <a href="/page-1" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Page 1</p>
+                                </a>
+                            {{/if}}
                         </li>
                         <li class="nav-item">
-                            <a href="../examples/page-2.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Page 2</p>
-                            </a>
+                            {{#if isPage2}}
+                                <a href="/page-2" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Page 2</p>
+                                </a>
+                            {{else}}
+                                <a href="/page-2" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Page 2</p>
+                                </a>
+                            {{/if}}
                         </li>
                     </ul>
                 </li>
@@ -97,23 +114,34 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-layer-group"></i>
-                        <p>
-                            Landing Page
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
+                        <p>Landing Page<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../examples/section-1.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Section 1</p>
-                            </a>
+                            {{#if isSection1}}
+                                <a href="/section-1" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Section 1</p>
+                                </a>
+                            {{else}}
+                                <a href="/section-1" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Section 1</p>
+                                </a>
+                            {{/if}}
                         </li>
                         <li class="nav-item">
-                            <a href="../examples/section-2.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Section 2</p>
-                            </a>
+                            {{#if isSection2}}
+                                <a href="/section-2" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Section 2</p>
+                                </a>
+                            {{else}}
+                                <a href="/section-2" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Section 2</p>
+                                </a>
+                            {{/if}}
                         </li>
                     </ul>
                 </li>

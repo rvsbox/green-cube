@@ -16,15 +16,46 @@ app.set('view engine', 'hbs') //использование движка
 app.set('views', 'views') //папка с шаблонами
 // END - Настройка шаблонизатора handlebars-----------------------------------------------------------------------------
 
+
 app.use(express.static('public')) //установка точки входа
 
+
+// START - Маршрутизация -----------------------------------------------------------------------------------------------
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        title: 'Dashboard',
+        isDashboard: 'true'
+    })
 })
 
-app.get('/about', (req, res) => {
-    res.render('about')
+app.get('/page-1', (req, res) => {
+    res.render('page-1', {
+        title: 'Page 1',
+        isPage1: 'false'
+    })
 })
+
+app.get('/page-2', (req, res) => {
+    res.render('page-2', {
+        title: 'Page 2',
+        isPage2: 'false'
+    })
+})
+
+app.get('/section-1', (req, res) => {
+    res.render('section-1', {
+        title: 'Section 1',
+        isSection1: 'false'
+    })
+})
+
+app.get('/section-2', (req, res) => {
+    res.render('section-2', {
+        title: 'Section 2',
+        isSection2: 'false'
+    })
+})
+// END - Маршрутизация -------------------------------------------------------------------------------------------------
 
 
 const PORT = process.env.PORT || 3000
