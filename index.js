@@ -1,5 +1,11 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const dshbRoutes = require('./routes/dashboard')
+const pg1Routes = require('./routes/page-1')
+const pg2Routes = require('./routes/page-2')
+const pg2adRoutes = require('./routes/page-2-add')
+const sc1Routes = require('./routes/section-1')
+const sc2Routes = require('./routes/section-2')
 
 const app = express()
 
@@ -17,45 +23,15 @@ app.set('views', 'views') //папка с шаблонами
 // END - Настройка шаблонизатора handlebars-----------------------------------------------------------------------------
 
 
-app.use(express.static('public')) //установка точки входа
+app.use(express.static('public')) //установка папки public
+app.use('/', dshbRoutes)
+app.use('/page-1', pg1Routes)
+app.use('/page-2', pg2Routes)
+app.use('/page-2-add', pg2adRoutes)
+app.use('/section-1', sc1Routes)
+app.use('/section-2', sc2Routes)
 
 
-// START - Маршрутизация -----------------------------------------------------------------------------------------------
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'Dashboard',
-        isDashboard: 'true'
-    })
-})
-
-app.get('/page-1', (req, res) => {
-    res.render('page-1', {
-        title: 'Page 1',
-        isPage1: 'false'
-    })
-})
-
-app.get('/page-2', (req, res) => {
-    res.render('page-2', {
-        title: 'Page 2',
-        isPage2: 'false'
-    })
-})
-
-app.get('/section-1', (req, res) => {
-    res.render('section-1', {
-        title: 'Section 1',
-        isSection1: 'false'
-    })
-})
-
-app.get('/section-2', (req, res) => {
-    res.render('section-2', {
-        title: 'Section 2',
-        isSection2: 'false'
-    })
-})
-// END - Маршрутизация -------------------------------------------------------------------------------------------------
 
 
 const PORT = process.env.PORT || 3000
