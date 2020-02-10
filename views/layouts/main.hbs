@@ -1,11 +1,20 @@
 {{> head }}
-<body>
 
-<div class="container">
-    {{{ body }}}
+<body class="hold-transition sidebar-mini layout-fixed">
+
+<!-- START - Site Wrapper -->
+<div class="wrapper">
+    {{> navbar}}
+
+    <div class="content-wrapper">
+        {{{ body }}}
+    </div>
+
+    {{> footer}}
 </div>
+<!-- END - Site Wrapper -->
 
+{{> scripts}}
 
-{{> footer}}
 </body>
 </html>
