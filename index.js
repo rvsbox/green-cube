@@ -24,6 +24,8 @@ app.set('views', 'views') //папка с шаблонами
 
 
 app.use(express.static('public')) //установка папки public
+app.use(express.urlencoded({extended: true})) //добавлен middleware??
+
 app.use('/', dshbRoutes)
 app.use('/page-1', pg1Routes)
 app.use('/page-2', pg2Routes)
