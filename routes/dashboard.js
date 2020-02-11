@@ -3,10 +3,10 @@ const router = Router()
 
 
 router.get('/', (req, res) => {
-    res.render('index', {
-        title: 'Dashboard',
-        isDashboard: 'true'
-    })
+  res.render('index', {
+    title: 'Dashboard',
+    isDashboard: 'true'
+  })
 })
 
 

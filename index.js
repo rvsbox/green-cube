@@ -13,8 +13,8 @@ const app = express()
 // START - Настройка шаблонизатора handlebars---------------------------------------------------------------------------
 //конфигурирование handlebars
 const hbs = exphbs.create({
-    defaultLayout: 'main',
-    extname: 'hbs'
+  defaultLayout: 'main',
+  extname: 'hbs'
 })
 
 app.engine('hbs', hbs.engine) //регистрация движка
@@ -32,11 +32,9 @@ app.use('/section-1', sc1Routes)
 app.use('/section-2', sc2Routes)
 
 
-
-
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
+  console.log(`Server is running on port ${PORT}`)
 })
 
