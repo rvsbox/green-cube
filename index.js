@@ -1,11 +1,11 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const dshbRoutes = require('./routes/dashboard')
-const pg1Routes = require('./routes/page-1')
-const pg2Routes = require('./routes/page-2')
-const pg2adRoutes = require('./routes/page-2-add')
-const sc1Routes = require('./routes/section-1')
-const sc2Routes = require('./routes/section-2')
+const pg1Routes = require('./routes/page1')
+const pg2Routes = require('./routes/page2')
+const pg2adRoutes = require('./routes/page2Add')
+const sc1Routes = require('./routes/section1')
+const sc2Routes = require('./routes/section2')
 
 const app = express()
 
@@ -27,11 +27,11 @@ app.use(express.static('public')) //установка папки public
 app.use(express.urlencoded({extended: true})) //добавлен middleware??
 
 app.use('/', dshbRoutes)
-app.use('/page-1', pg1Routes)
-app.use('/page-2', pg2Routes)
-app.use('/page-2-add', pg2adRoutes)
-app.use('/section-1', sc1Routes)
-app.use('/section-2', sc2Routes)
+app.use('/page1', pg1Routes)
+app.use('/page2', pg2Routes)
+app.use('/page2Add', pg2adRoutes)
+app.use('/section1', sc1Routes)
+app.use('/section2', sc2Routes)
 
 
 const PORT = process.env.PORT || 3000
