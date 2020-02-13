@@ -1,5 +1,6 @@
 const {Router} = require('express')
 const router = Router()
+const Page2 = require('../models/Page2')
 
 
 router.get('/', (req, res) => {
@@ -9,8 +10,10 @@ router.get('/', (req, res) => {
   })
 })
 
-router.post('/', (req, res) => {
-  console.log(req.body)
+router.post('/', async(req, res) => {
+  const page2 = new Page2(req.body.title, req.body.price, req.body.description)
+
+  await page2.save()
 
   res.redirect('/page2')
 })

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "asdf",
+    "price": "34",
+    "description": "sdfgsdf",
+    "id": "cb6f921b-250f-4e3e-b4bb-dbf5fc023720"
+  },
+  {
+    "title": "test",
+    "price": "20",
+    "description": "description",
+    "id": "00f6c6ca-bf8a-4d2e-b08d-7c507e8b4144"
+  },
+  {
+    "title": "text",
+    "price": "120",
+    "description": "описание товар",
+    "id": "9cf24ac0-f35a-4481-88e1-53da74deae89"
+  }
+]
